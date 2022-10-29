@@ -5,22 +5,32 @@
       <!-- CENTER -->
       <div class="row justify-content-center align-items-center minh-100">
         <!-- MAIN CARD CONTAINER -->
-        <div class="card container-notifications">
+        <div class="card shadow-sm border-0 container-notifications">
           <div class="card-body">
             <!-- NOTIFICATIONS ROW -->
             <div class="row d-flex">
               <div class="col-6">
-                <p class="fw-bold fs-5">Notifications 3</p>
+                <p class="fw-bold">
+                  Notifications
+                  <span class="badge badgeBackground">{{
+                    notificationsNum
+                  }}</span>
+                </p>
               </div>
-              <div class="col-6"><p class="text-end">Mark all as read</p></div>
+              <div class="col-6">
+                <p class="text-end link" (click)="read()">Mark all as read</p>
+              </div>
             </div>
             <!-- NOTIFICATIONS CARDS COMPONENTS -->
-            <div class="row">
-              <app-notification-card></app-notification-card>
+            <div class="row p-1" *ngFor="let card of cards">
+              <app-notification-card [card]="card"></app-notification-card>
             </div>
           </div>
         </div>
+        <!-- END MAIN -->
       </div>
+      <!-- END CENTER -->
     </div>
+    <!-- END MAIN -->
   </div>
 </div>

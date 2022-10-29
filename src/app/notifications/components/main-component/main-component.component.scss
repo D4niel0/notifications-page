@@ -16,3 +16,13 @@ p {
 .container-notifications {
   max-width: 50rem;
 }
+
+.link:hover {
+  cursor: pointer;
+  color: hsl(219, 85%, 26%);
+}
+
+.badgeBackground {
+  margin-left: 5px;
+  background-color: hsl(219, 85%, 26%);
+}

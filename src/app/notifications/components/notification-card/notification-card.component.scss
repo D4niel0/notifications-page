@@ -1,0 +1,41 @@
+p {
+  font-size: 14px;
+}
+.avatar,
+.commentPicture {
+  max-width: 2.5rem;
+}
+
+.name:hover,
+.link:hover {
+  cursor: pointer;
+  color: hsl(219, 85%, 26%);
+}
+.message:hover {
+  cursor: pointer;
+  background-color: hsl(205, 33%, 90%);
+}
+
+.commentPicture:hover {
+  cursor: pointer;
+  border: 1.5px solid #e4eff9;
+  border-radius: 8px;
+}
+
+.notReadBackground {
+  background-color: #f6fafc;
+}
+
+.dot {
+  height: 7px;
+  width: 7px;
+  background-color: #ff453f;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 2px;
+  margin-left: 5px;
+}
+
+.lightgrey {
+  color: #97979e;
+}

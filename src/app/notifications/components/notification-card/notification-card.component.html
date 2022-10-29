@@ -1,8 +1,58 @@
-<div class="card">
+<div class="card border-0" [ngClass]="{ notReadBackground: !card?.status }">
   <div class="card-body">
     <div class="row">
-      <div class="col-2">IMG</div>
-      <div class="col-10">TEXT</div>
+      <!-- AVATAR -->
+      <div class="col-2 col-sm-1">
+        <img
+          class="avatar"
+          [src]="'../../../../assets/images/' + card?.img"
+          alt="avatar"
+        />
+      </div>
+      <!-- END AVATAR -->
+      <div class="col-10 col-sm-11">
+        <div class="row">
+          <!-- NAME, TEXT, DAYS AGO -->
+          <div
+            [ngClass]="{
+              'col-11': card?.isPicCommented,
+              'col-12': !card?.isPicCommented
+            }"
+          >
+            <p class="mb-0">
+              <span class="name fw-bold">{{ card?.name }} </span>
+              <span>{{ card?.text }}</span>
+              <span class="link fw-bold" *ngIf="card?.group">{{
+                card?.group
+              }}</span>
+              <span class="link fw-bold" *ngIf="card?.post">{{
+                card?.post
+              }}</span>
+              <span *ngIf="!card?.status" class="dot"></span>
+            </p>
+            <p class="mb-2 lightgrey">{{ card?.time }}</p>
+          </div>
+          <!-- IMAGE COMMENTED -->
+          <div *ngIf="card?.commentPicture" class="col-1">
+            <img
+              class="commentPicture"
+              [src]="'../../../../assets/images/' + card?.commentPicture"
+              alt="commentPicture"
+            />
+          </div>
+        </div>
+        <div *ngIf="card?.message" class="row">
+          <div class="col-12">
+            <div class="message card border-1">
+              <div class="card-body">
+                <p class="mb-0">
+                  {{ card?.message }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
